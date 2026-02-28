@@ -78,8 +78,8 @@
             <div class="form__secret">
               <div class="form__date">
                 <label for="cardYear">Exp. Date (MM/YY)</label>
-                <input inputmode="numeric" name="cardMonth" placeholder="MM" />
-                <input inputmode="numeric" name="cardYear" placeholder="YY" />
+                <input inputmode="numeric" name="cardMonth" id="cardMonth" placeholder="MM" />
+                <input inputmode="numeric" name="cardYear" id="cardYear" placeholder="YY" />
                 <p></p>
               </div>
               <div class="form__cvc">
@@ -87,6 +87,7 @@
                 <input
                   inputmode="numeric"
                   name="cardCvc"
+                  id="cardCvc"
                   placeholder="e.g. 123"
                 />
                 <p></p>
@@ -96,10 +97,6 @@
             <button class="card__confirm">Confirm</button>
           </form>
         </section>
-
-        <!-- Completed state start -->
-
-        <!-- Thank you! We've added your card details Continue -->
       </div>
     </main>
 

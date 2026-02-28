@@ -57,7 +57,7 @@ input {
   width: 447px;
   height: 245px;
   position: absolute;
-  background-image: url('/images/bg-card-front.png');
+  background-image: url('../images/bg-card-front.png');
   background-repeat: no-repeat;
   background-size: contain;
   top: 187px;
@@ -103,7 +103,7 @@ input {
   width: 447px;
   height: 245px;
   position: absolute;
-  background-image: url('/images/bg-card-back.png');
+  background-image: url('../images/bg-card-back.png');
   background-repeat: no-repeat;
   background-size: contain;
   bottom: 186px;
@@ -217,6 +217,10 @@ input:focus-visible {
 }
 
 @media (max-width: 500px) {
+  .main__card {
+    width: 375px;
+    margin: 0 auto;
+  }
   .main__container {
     grid-template-columns: 1fr;
     row-gap: 86px;

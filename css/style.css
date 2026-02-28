@@ -57,7 +57,7 @@ input {
   width: 447px;
   height: 245px;
   position: absolute;
-  background-image: url(/images/bg-card-front.png);
+  background-image: url('/images/bg-card-front.png');
   background-repeat: no-repeat;
   background-size: contain;
   top: 187px;
@@ -103,7 +103,7 @@ input {
   width: 447px;
   height: 245px;
   position: absolute;
-  background-image: url(/images/bg-card-back.png);
+  background-image: url('/images/bg-card-back.png');
   background-repeat: no-repeat;
   background-size: contain;
   bottom: 186px;

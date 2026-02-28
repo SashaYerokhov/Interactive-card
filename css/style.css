@@ -57,7 +57,7 @@ input {
   width: 447px;
   height: 245px;
   position: absolute;
-  background-image: url('../images/bg-card-front.png');
+  background-image: url("../images/bg-card-front.png");
   background-repeat: no-repeat;
   background-size: contain;
   top: 187px;
@@ -103,7 +103,7 @@ input {
   width: 447px;
   height: 245px;
   position: absolute;
-  background-image: url('../images/bg-card-back.png');
+  background-image: url("../images/bg-card-back.png");
   background-repeat: no-repeat;
   background-size: contain;
   bottom: 186px;
@@ -233,11 +233,12 @@ input:focus-visible {
     z-index: 2;
   }
   .front__card img {
-       /* или любое значение в пропорции 54:30 */
-       width: 72px;
+    /* или любое значение в пропорции 54:30 */
+    width: 72px;
     height: 46px;
     object-fit: cover;
-    object-position: center; /* картинка центрируется */
+    object-position: center;
+    /* картинка центрируется */
   }
   .front__card-logo {
     padding: 17px 0 0 19px;

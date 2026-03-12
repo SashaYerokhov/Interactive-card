@@ -54,7 +54,7 @@
           </div>
         </section>
         <section class="main__form">
-          <form action="#" class="form" id="form">
+          <form action="#" class="form" id="form" novalidate>
             <div class="form__name">
               <label for="cardName">Cardholder Name</label>
               <input
@@ -62,39 +62,62 @@
                 name="cardName"
                 id="cardName"
                 placeholder="e.g. Jane Appleseed"
+                required
               />
-              <p></p>
+              <small class="error cardName"></small>
             </div>
             <div class="form__number">
               <label for="cardNumber">Card Number</label>
               <input
-                inputmode="numeric"
+                type="text"
                 name="cardNumber"
                 id="cardNumber"
+                inputmode="numeric"
+                maxlength="19"
                 placeholder="e.g. 1234 5678 9123 0000"
+                required
               />
-              <p></p>
+              <small class="error cardNumber"></small>
             </div>
             <div class="form__secret">
               <div class="form__date">
                 <label for="cardYear">Exp. Date (MM/YY)</label>
-                <input inputmode="numeric" name="cardMonth" id="cardMonth" placeholder="MM" />
-                <input inputmode="numeric" name="cardYear" id="cardYear" placeholder="YY" />
-                <p></p>
+                <input
+                  type="text"
+                  inputmode="numeric"
+                  name="cardMonth"
+                  id="cardMonth"
+                  maxlength="2"
+                  placeholder="MM"
+                  required
+                />
+                <input
+                  type="text"
+                  inputmode="numeric"
+                  name="cardYear"
+                  id="cardYear"
+                  maxlength="2"
+                  placeholder="YY"
+                  required
+                />
+                <small class="error exp"></small>
               </div>
               <div class="form__cvc">
                 <label for="cardCvc">CVC</label>
                 <input
+                  type="text"
                   inputmode="numeric"
                   name="cardCvc"
                   id="cardCvc"
+                  maxlength="3"
                   placeholder="e.g. 123"
+                  required
                 />
-                <p></p>
+                <small class="error cardCvc"></small>
               </div>
             </div>
 
-            <button class="card__confirm">Confirm</button>
+            <button class="card__btn card__confirm">Confirm</button>
           </form>
         </section>
       </div>
@@ -106,5 +129,6 @@
         >Frontend Mentor</a
       >. Coded by <a href="#">Sasha Yerokhov</a>.
     </div>
+    <script src="app.js"></script>
   </body>
 </html>

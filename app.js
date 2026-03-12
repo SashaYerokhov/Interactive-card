@@ -3,6 +3,13 @@ const labels = document.querySelectorAll("label");
 const inputs = document.querySelectorAll("input");
 // console.log(form, labels, inputs);
 
+inputs.forEach(input => {
+  input.addEventListener('input', (event) => {
+    const p = document.querySelector(`.${input.name}`);
+    console.log(p);    
+   p.textContent = event.target.value.toUpperCase();
+  })
+})
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();

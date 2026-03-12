@@ -68,7 +68,7 @@ input {
   padding: 28px 0 0 32px;
   margin-block-end: 64px;
 }
-.front__card-number {
+.front__card .cardNumber {
   padding-inline-start: 32px;
   margin: 0 0 25px 0;
   font-weight: 500;
@@ -76,19 +76,29 @@ input {
   letter-spacing: 0.12em;
   color: var(--white);
 }
+.cardMonth {
+  color: var(--white);
+}
 .front__card-data {
+  /* width: 100%; */
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-inline: 32px;
 }
 .front__card-data p {
-  padding-inline: 32px;
   margin: 0;
   font-weight: 500;
   font-size: 14px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   text-align: right;
+  color: var(--white);
+}
+.front__card-date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--white);
 }
 .data-name {
@@ -110,7 +120,7 @@ input {
   left: 258px;
   z-index: 1;
 }
-.back__card-text {
+.back__card p {
   padding: 100px 57px 0 0;
   font-weight: 500;
   font-size: 14px;
@@ -135,25 +145,45 @@ input[type="text"] {
   outline: none;
   width: 100%;
   height: 45px;
-  border: 1px solid var(--gray-200);
+  border: 1px solid var(--gray-400);
   border-radius: 8px;
   cursor: pointer;
   padding-inline-start: 16px;
-  transition: border-color 0.4s ease-in-out;
+  transition: border-radius 0.4s ease-in-out;
 }
 input::placeholder {
   color: var(--gray-200);
 }
-input:focus {
-  outline: 2px solid hsl(263, 66%, 51%);
+input[type="text"]:focus {
+  outline: none;
+  border-image: linear-gradient(
+      to right,
+      hsl(249, 99%, 64%) 90%,
+      hsl(278, 94%, 30%) 10%
+    )
+    1;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: 0 0 3px rgba(91, 157, 217, 0.5);
+  background-clip: padding-box;
 }
-input:focus-visible {
-  outline: 2px solid hsl(263, 66%, 51%);
+input[type="text"]:focus-visible {
+  outline: none;
+  border-image: linear-gradient(
+      to right,
+      hsl(249, 99%, 64%) 90%,
+      hsl(278, 94%, 30%) 10%
+    )
+    1;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: 0 0 3px rgba(91, 157, 217, 0.5);
+  background-clip: padding-box;
 }
 .form__name {
   margin-block-end: 26px;
 }
-.form__number input {
+/* .form__number input {
   display: block;
   width: 100%;
   height: 45px;
@@ -162,7 +192,7 @@ input:focus-visible {
   cursor: pointer;
   padding-inline-start: 16px;
   transition: border-color 0.4s ease-in-out;
-}
+} */
 .form__number {
   margin-block-end: 26px;
 }
@@ -179,10 +209,10 @@ input:focus-visible {
   display: inline-block;
   width: 80px;
   height: 45px;
-  border: 2px solid var(--gray-400);
+  /* border: 2px solid var(--gray-400);
   border-radius: 8px;
   cursor: pointer;
-  padding-inline-start: 16px;
+  padding-inline-start: 16px; */
   transition: border-color 0.4s ease-in-out;
 }
 .form__date input:first-of-type {
@@ -192,31 +222,45 @@ input:focus-visible {
   display: block;
   width: 191px;
   height: 45px;
-  border: 2px solid var(--gray-400);
+  /* border: 2px solid var(--gray-400);
   border-radius: 5px;
   cursor: pointer;
-  padding-inline-start: 16px;
+  padding-inline-start: 16px; */
   transition: border-color 0.4s ease-in-out;
 }
 .error {
+  display: none;
+  color: var(--red);
   opacity: 0;
   transform: translateY(-10px);
-  transition: opacity 0.3s, transform 0.3s;
+  transition:
+    opacity 0.3s,
+    transform 0.3s;
 }
 
 .error.invalid {
+  display: block;
   opacity: 1;
   transform: translateY(0);
 }
 
-.input__error {
+input[type="text"].input__error,
+.form__date input.input__error {
+  border: 2px solid var(--red);
   animation: shake 0.3s ease-in-out;
 }
 
 @keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-5px); }
-  75% { transform: translateX(5px); }
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
 }
 /* .error {
   display: none;
@@ -312,11 +356,14 @@ small {
     bottom: 66px;
     left: 72px;
   }
-  .front__card-number {
+  .front__card .cardNumber {
     font-size: 18px;
     margin: 0 0 17px 0;
   }
-  .back__card-text {
+  .front__card-date {
+    font-size: 9px;
+  }
+  .back__card p {
     padding: 63px 35px 0 0;
     font-size: 9px;
   }

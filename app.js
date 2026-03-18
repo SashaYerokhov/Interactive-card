@@ -3,18 +3,6 @@ const labels = document.querySelectorAll("label");
 const inputs = document.querySelectorAll("input");
 // console.log(form, labels, inputs);
 
-// inputs.forEach(input => {
-//   input.addEventListener('input', (event) => {
-//     const p = document.querySelector(`.${input.name}`);
-//     console.log(p);    
-//    p.textContent = event.target.value.toUpperCase();
-//    if(input.name === 'cardNumber') {
-//     // p.textContent = event.target.value.replace(/\s/g, '').replace(/([0-9]{4})/g, '$1 ').trim();
-
-//    }
-//   })
-// })
-
 inputs.forEach(input => {
   input.addEventListener('input', (event) => {
     const p = document.querySelector(`.${input.name}`);
@@ -44,17 +32,6 @@ inputs.forEach(input => {
   })
 })
 
-/**
- * Управление значением input: Теперь мы не только обновляем текст на карте, но и само значение поля ввода, чтобы пользователь видел пробелы по мере ввода.
-
-Ограничение длины: Добавлена проверка на максимальную длину в 16 цифр.
-
-Правильное форматирование: Используется регулярное выражение /(\d{4})(?=\d)/g, которое добавляет пробел после каждых 4 цифр, но только если после них есть еще цифры (чтобы не добавлять пробел в конце).
-
-Заполнитель для карты: Добавлен || '0000 0000 0000 0000', чтобы на карте отображался шаблон, если поле пустое.
-
-Также, обратите внимание, что в функции validateCardNumber у вас есть похожее форматирование. Теперь, когда форматирование происходит в реальном времени в обработчике input, вы можете упростить функцию валидации:
- */
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -92,14 +69,6 @@ const checkValidation = (input) => {
   }
 };
 
-/** 
- * Чтобы было проще следить за числовыми форматами, можно использовать с функ
-цией parseInt() второй аргумент: основание системы счисления (иначе говоря, 
-количество цифр в ней). 
-Чаще всего вы будете передавать в функцию parseInt() десятич
-ные числа, указывая 10 в качестве второго аргумента.
-*/
-
 const validateMonth = (input) => {
   const month = parseInt(input.value, 10);
   if (!/^\d{2}$/.test(input.value)) {
@@ -112,8 +81,6 @@ const validateMonth = (input) => {
 const validateYear = (input) => {
   const year = parseInt(input.value, 10);
   const currentYear = new Date().getFullYear() % 100; 
-  // Получаем последние 2 цифры текущего года
-  // 2026 % 100 - 26 100*2=200 2026-200 - (вычитаем в столбик) 2026 - под ним 200 осататок остается - 26
   
   if (!/^\d{2}$/.test(input.value)) {
     showError(input, "Invalid format (YY)");
@@ -186,8 +153,6 @@ const clearError = (input) => {
   input.classList.remove("input__error");
 }; 
 
-
-
 const showCompleted = () => {
   form.textContent = "";
   const completed = `
@@ -202,65 +167,3 @@ const showCompleted = () => {
   const continueBtn = document.querySelector(".confirm__btn");
   continueBtn.addEventListener("click", () => location.reload());
 };
-
-/**
- * Добрый день. Есть приложение на Vue.js в котором есть родительский компонент App.js
- * и два дочерних компонента CartImages.vue и CartForm.vue, который в свою очередь имеет
- * компонент потомок BaseInput.vue.
- * Есть скрипт на JavaScript. Может переписать скрипт на JavaScript на Vue - Options.api?
- */
-// 
-
- // const checkValidation = (input) => {
-//   if (input.name === "cardMonth" || input.name === "cardYear") {
-//     const month = document.querySelector(`input[name="cardMonth"]`).value;
-//     const year = document.querySelector(`input[name="cardYear"]`).value;
-//     const errorExp = document.querySelector(".error.exp");
-
-//     if (!month || !year) {
-//       errorExp.textContent = "Can't be blank";
-//       errorExp.classList.add("invalid");
-//       input.classList.add("input__error");
-//       return;
-//     }
-//     errorExp.classList.remove("invalid");
-//     input.classList.remove("input__error");
-//     return;
-//   }
-
-//   const errorMsg = document.querySelector(`.error.${input.name}`);
-//   if (input.name === "cardMonth" || input.name === "cardYear") {
-//     errorSelector = ".error.exp";
-//   }
-
-//   errorMsg.classList.add("invalid");
-//   input.classList.add("input__error");
-//   if (!input.value) {
-//     errorMsg.textContent = "Can't be blank";
-//   } else if (
-//     input.name === "cardNumber" &&
-//     !/^\d{4}\s\d{4}\s\d{4}\s\d{4}$/.test(input.value)
-//   ) {
-//     errorMsg.textContent = `Wrong format, number only`;
-//   } else if (
-//     (input.name === "cardMonth" && !/^[0-9]{2}$/.test(input.value)) ||
-//     parseInt(input.value, 10) < 1 ||
-//     parseInt(input.value, 10) > 12
-//   ) {
-//     errorMsg.textContent = "Invalid month";
-//   } else if (
-//     (input.name === "cardYear" && !/^[0-9]{2}$/.test(input.value)) ||
-//     parseInt(input.value, 20) >= 26 ||
-//     parseInt(input.value, 30) <= 30
-//   ) {
-//     errorMsg.textContent = "Wrong Year";
-//   } else if (input.name === "cardCvc" && !/^[0-9]{3}$/.test(input.value)) {
-//     errorMsg.textContent = `Wrong format, 3 digits only`;
-//   } else {
-//     errorMsg.classList.remove("invalid");
-//     input.classList.remove("input__error");
-//     return;
-//   }
-
-//   console.log(input.name);
-// };

@@ -203,7 +203,13 @@ const showCompleted = () => {
   continueBtn.addEventListener("click", () => location.reload());
 };
 
-
+/**
+ * Добрый день. Есть приложение на Vue.js в котором есть родительский компонент App.js
+ * и два дочерних компонента CartImages.vue и CartForm.vue, который в свою очередь имеет
+ * компонент потомок BaseInput.vue.
+ * Есть скрипт на JavaScript. Может переписать скрипт на JavaScript на Vue - Options.api?
+ */
+// 
 
  // const checkValidation = (input) => {
 //   if (input.name === "cardMonth" || input.name === "cardYear") {

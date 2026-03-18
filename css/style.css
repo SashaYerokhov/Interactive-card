@@ -42,8 +42,6 @@ button {
 input {
   padding-inline: 0;
 }
-/* .main {
-} */
 .main__container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -54,8 +52,8 @@ input {
   position: relative;
 }
 .front__card {
-  width: 447px;
-  height: 245px;
+  width: 27.9375rem;
+  height: 15.3125rem;
   position: absolute;
   background-image: url("../images/bg-card-front.png");
   background-repeat: no-repeat;
@@ -72,7 +70,7 @@ input {
   padding-inline-start: 32px;
   margin: 0 0 25px 0;
   font-weight: 500;
-  font-size: 28px;
+  font-size: 1.75rem;
   letter-spacing: 0.12em;
   color: var(--white);
 }
@@ -80,7 +78,6 @@ input {
   color: var(--white);
 }
 .front__card-data {
-  /* width: 100%; */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -89,7 +86,7 @@ input {
 .front__card-data p {
   margin: 0;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 0.875rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   text-align: right;
@@ -103,15 +100,15 @@ input {
 }
 .data-name {
   font-weight: 500;
-  font-size: 14px;
+  font-size: 0.875rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--white);
 }
 
 .back__card {
-  width: 447px;
-  height: 245px;
+  width: 27.9375rem;
+  height: 15.3125rem;
   position: absolute;
   background-image: url("../images/bg-card-back.png");
   background-repeat: no-repeat;
@@ -123,16 +120,14 @@ input {
 .back__card p {
   padding: 100px 57px 0 0;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 0.875rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   text-align: right;
   color: var(--white);
 }
-/* .main__form {
-} */
 .form {
-  width: 381px;
+  width: 23.8125rem;
 }
 label {
   text-transform: uppercase;
@@ -153,6 +148,9 @@ input[type="text"] {
 }
 input::placeholder {
   color: var(--gray-200);
+  font-weight: 500;
+  font-size: 1.125rem;
+  opacity: 0.25;
 }
 input[type="text"]:focus {
   outline: none;
@@ -180,19 +178,10 @@ input[type="text"]:focus-visible {
   box-shadow: 0 0 3px rgba(91, 157, 217, 0.5);
   background-clip: padding-box;
 }
+
 .form__name {
   margin-block-end: 26px;
 }
-/* .form__number input {
-  display: block;
-  width: 100%;
-  height: 45px;
-  border: 2px solid var(--gray-400);
-  border-radius: 8px;
-  cursor: pointer;
-  padding-inline-start: 16px;
-  transition: border-color 0.4s ease-in-out;
-} */
 .form__number {
   margin-block-end: 26px;
 }
@@ -209,10 +198,6 @@ input[type="text"]:focus-visible {
   display: inline-block;
   width: 80px;
   height: 45px;
-  /* border: 2px solid var(--gray-400);
-  border-radius: 8px;
-  cursor: pointer;
-  padding-inline-start: 16px; */
   transition: border-color 0.4s ease-in-out;
 }
 .form__date input:first-of-type {
@@ -220,12 +205,8 @@ input[type="text"]:focus-visible {
 }
 .form__cvc input {
   display: block;
-  width: 191px;
-  height: 45px;
-  /* border: 2px solid var(--gray-400);
-  border-radius: 5px;
-  cursor: pointer;
-  padding-inline-start: 16px; */
+  width: 11.9375rem;
+  height: 2.8125rem;
   transition: border-color 0.4s ease-in-out;
 }
 .error {
@@ -262,26 +243,14 @@ input[type="text"].input__error,
     transform: translateX(5px);
   }
 }
-/* .error {
-  display: none;
-  color: var(--red);
-} */
-/* .error.invalid {
-  display: block;
-} */
-/* input[type="text"].input__error,
-.form__date input.input__error {
-  border: 2px solid var(--red);
-} */
 small {
   font-weight: 500;
-  font-size: 12px;
   color: var(--red);
   margin-block-start: 8px;
 }
 .card__btn {
   width: 100%;
-  height: 53px;
+  height: 3.3125rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -298,15 +267,15 @@ small {
 .completed__header {
   margin-block: 0 16px;
   text-transform: uppercase;
-  font-size: 28px;
+  font-size: 1.75rem;
   font-weight: 500;
   letter-spacing: 0.12em;
   color: var(--purple-950);
 }
 .completed__text {
   font-weight: 500;
-  font-size: 18px;
-  color: var(--gray-400);
+  font-size: 1.125rem;
+  color: hsl(279, 6%, 55%);
   margin-block: 0 48px;
 }
 .attribution {
@@ -320,7 +289,7 @@ small {
 
 @media (max-width: 500px) {
   .main__card {
-    width: 375px;
+    width: 23.4375rem;
     margin: 0 auto;
   }
   .main__container {
@@ -328,8 +297,8 @@ small {
     row-gap: 86px;
   }
   .front__card {
-    width: 286px;
-    height: 157px;
+    width: 17.875rem;
+    height: 9.8125rem;
     top: 110px;
     left: 10px;
     z-index: 2;
@@ -351,8 +320,8 @@ small {
     font-size: 9px;
   }
   .back__card {
-    width: 286px;
-    height: 157px;
+    width: 17.875rem;
+    height: 9.8125rem;
     bottom: 66px;
     left: 72px;
   }
@@ -361,25 +330,25 @@ small {
     margin: 0 0 17px 0;
   }
   .front__card-date {
-    font-size: 9px;
+    font-size: 0.5625rem;
   }
   .back__card p {
     padding: 63px 35px 0 0;
-    font-size: 9px;
+    font-size: 0.5625rem;
   }
   .form {
-    width: 321px;
+    width: 20.0625rem;
     margin: 0 auto;
     padding-block-end: 45px;
   }
   label {
-    font-size: 15px;
+    font-size: 0.9375rem;
   }
   .form__date input {
-    width: 64px;
+    width: 4rem;
   }
   .form__cvc input {
-    width: 162px;
+    width: 10.125rem;
   }
   .form__secret {
     margin-block-end: 28px;
